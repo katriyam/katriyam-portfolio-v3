@@ -57,22 +57,22 @@ const footerLinks: FooterSection[] = [
     links: [
       {
         title: 'Facebook',
-        href: '#',
+        href: 'https://www.facebook.com/katriyam',
         icon: <HugeiconsIcon icon={Facebook01Icon} strokeWidth={2} />,
       },
       {
         title: 'Instagram',
-        href: '#',
+        href: 'https://www.instagram.com/katriyam.official',
         icon: <HugeiconsIcon icon={InstagramIcon} strokeWidth={2} />,
       },
       {
         title: 'X (Twitter)',
-        href: '#',
+        href: 'https://x.com/teamkatriyam',
         icon: <HugeiconsIcon icon={NewTwitterIcon} strokeWidth={2} />,
       },
       {
         title: 'LinkedIn',
-        href: '#',
+        href: 'https://www.linkedin.com/company/katriyam',
         icon: <HugeiconsIcon icon={Linkedin01Icon} strokeWidth={2} />,
       },
     ],
@@ -110,6 +110,7 @@ export function Footer() {
                       <a
                         key={`${section.label}-${link.title}`}
                         href={link.href}
+                        target="_blank"
                         className="inline-flex items-center duration-250 hover:text-foreground [&_svg]:me-1 [&_svg]:size-4"
                       >
                         {link.icon}

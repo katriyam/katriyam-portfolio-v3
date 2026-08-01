@@ -54,7 +54,7 @@ const features = [
 
 export function Services() {
   return (
-    <section className="container pb-40">
+    <section id="services" className="container pb-40">
       <div className="max-w-xl mx-auto lg:mx-0 text-center lg:text-left space-y-2 mb-10">
         <h2 className="text-3xl md:text-6xl lg:text-5xl font-semibold text-foreground">
           Services we provide

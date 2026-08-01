@@ -1,49 +1,54 @@
 'use client'
 
+import { buttonVariants } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import { ArrowLeft01Icon, ArrowRight01Icon } from '@hugeicons/core-free-icons'
 import { HugeiconsIcon } from '@hugeicons/react'
+import { ArrowUpRightIcon } from 'lucide-react'
 import { AnimatePresence, motion } from 'motion/react'
+import Link from 'next/link'
 import { useCallback, useEffect, useState } from 'react'
 
 const SERVICES = [
   {
     id: '01',
-    title: 'Web Design',
+    title: 'The Global Founder',
     description:
-      'Creating beautiful, functional, and user-centric digital experiences.',
-    image:
-      'https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1200',
+      'A premier European digital magazine. We handled the complete setup and serve as maintenance partner.',
+    image: '/PROJECT-01.png',
+    link: 'https://theglobalfounder.com',
   },
   {
     id: '02',
-    title: 'Framer Development',
-    description: 'Building high-performance, animated websites with Framer.',
-    image:
-      'https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&w=1200',
+    title: 'Premium Multishop',
+    description:
+      'We created their full e-commerce website and provided allaround graphic support.',
+    image: '/PROJECT-02.png',
+    link: 'https://premiummultishop.com',
   },
   {
     id: '03',
-    title: 'Branding',
+    title: 'Sellerket',
     description:
-      "Defining your brand's visual identity and voice for a lasting impression.",
-    image:
-      'https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1200',
+      'An expansive marketplace for influencers. We provided comprehensive support from web to visuals.',
+    image: '/PROJECT-03.png',
+    link: 'https://www.sellerket.com',
   },
   {
     id: '04',
-    title: 'Web Design',
+    title: 'Miracle Invest',
     description:
-      'Creating beautiful, functional, and user-centric digital experiences.',
-    image:
-      'https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1200',
+      'We established their digital presence from the ground up, ensuring a professional corporate identity.',
+    image: '/PROJECT-04.png',
+    link: 'https://miracleinvest.group',
   },
   {
     id: '05',
-    title: 'Framer Development',
-    description: 'Building high-performance, animated websites with Framer.',
-    image:
-      'https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&w=1200',
+    title: 'AA New Auto Electronics',
+    description:
+      'A robust digital footprint for vehicle services, focusing on trust and clarity.',
+    image: '/PROJECT-05.png',
+    link: 'https://aanewautoets.com',
   },
 ]
 
@@ -137,14 +142,27 @@ export default function VerticalTabs() {
                 </span>
 
                 <div className="flex flex-col gap-2 flex-1">
-                  <span
-                    className={cn(
-                      'text-xl md:text-3xl font-normal tracking-tight transition-colors duration-500',
-                      isActive ? 'text-foreground' : '',
-                    )}
-                  >
-                    {service.title}
-                  </span>
+                  <div className="flex items-center gap-4">
+                    <span
+                      className={cn(
+                        'text-xl md:text-3xl font-normal tracking-tight transition-colors duration-500',
+                        isActive ? 'text-foreground' : '',
+                      )}
+                    >
+                      {service.title}
+                    </span>
+
+                    <Link
+                      href={service.link}
+                      target="_blank"
+                      className={buttonVariants({
+                        size: 'sm',
+                        variant: 'ghost',
+                      })}
+                    >
+                      <ArrowUpRightIcon />
+                    </Link>
+                  </div>
 
                   <AnimatePresence mode="wait">
                     {isActive && (
