@@ -17,15 +17,15 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   const navItems = [
     {
       name: 'Services',
-      link: '/',
+      link: '/#services',
     },
     {
       name: 'Our Works',
-      link: '/',
+      link: '/#works',
     },
     {
       name: 'About Us',
-      link: '/about',
+      link: '/#about',
     },
   ]
 
@@ -39,7 +39,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <NavBody>
           <NavbarLogo />
           <NavItems items={navItems} />
-          <NavbarButton variant="primary">Book a Meeting</NavbarButton>
+          <NavbarButton href='#contact' variant="primary">Book a Meeting</NavbarButton>
         </NavBody>
 
         {/* Mobile Navigation */}

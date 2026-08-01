@@ -1,13 +1,17 @@
-import { Button } from '@/components/ui/button'
+'use client'
+
+import { Button, buttonVariants } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
+import { cn } from '@/lib/utils'
 import { Mail, MapPin, Phone } from 'lucide-react'
+import Link from 'next/link'
 
 export function ContactSection() {
   return (
-    <section className="pb-40 container">
+    <section id="contact" className="pb-40 container">
       <div className="mb-16 text-center">
         <h2 className="mb-4 font-bold text-3xl md:text-4xl text-balance">
           Get in Touch
@@ -20,9 +24,11 @@ export function ContactSection() {
 
       <div className="lg:items-stretch gap-6 grid lg:grid-cols-2">
         {/* Contact Form */}
-        <Card className="px-4 py-8 h-full">
+        <Card className="px-4 py-8">
           <CardHeader>
-            <CardTitle className="text-balance">Send us a Message</CardTitle>
+            <CardTitle className="text-lg text-balance">
+              Send us a Message
+            </CardTitle>
           </CardHeader>
 
           <CardContent className="space-y-8">
@@ -72,26 +78,29 @@ export function ContactSection() {
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
-              <div className="flex items-center gap-3">
+              <div className="flex items-start gap-3">
                 <div className="flex justify-center items-center bg-primary/10 rounded-full size-8">
                   <Mail className="size-4 text-primary" />
                 </div>
                 <div>
                   <h4 className="font-medium text-sm">Email</h4>
                   <p className="text-muted-foreground text-xs">
-                    hello@company.com
+                    contact@katriyam.com
                   </p>
                 </div>
               </div>
 
-              <div className="flex items-center gap-3">
+              <div className="flex items-start gap-3">
                 <div className="flex justify-center items-center bg-primary/10 rounded-full size-8">
                   <Phone className="size-4 text-primary" />
                 </div>
                 <div>
                   <h4 className="font-medium text-sm">Phone</h4>
                   <p className="text-muted-foreground text-xs">
-                    +1 (555) 123-4567
+                    (+82) 10-2180-1070
+                  </p>
+                  <p className="text-muted-foreground text-xs">
+                    (+880) 1750050511
                   </p>
                 </div>
               </div>
@@ -103,9 +112,9 @@ export function ContactSection() {
                 <div>
                   <h4 className="font-medium text-sm">Office</h4>
                   <p className="text-muted-foreground text-xs">
-                    123 Business Ave, Suite 100
+                    Agrabad Commercial Area,
                     <br />
-                    San Francisco, CA 94105
+                    Chattogram, Bangladesh.
                   </p>
                 </div>
               </div>
@@ -120,24 +129,10 @@ export function ContactSection() {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="space-y-2 text-sm">
-                <div className="flex justify-between">
-                  <span>Monday - Friday</span>
-                  <span className="text-muted-foreground">
-                    9:00 AM - 6:00 PM
-                  </span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Saturday</span>
-                  <span className="text-muted-foreground">
-                    10:00 AM - 4:00 PM
-                  </span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Sunday</span>
-                  <span className="text-muted-foreground">Closed</span>
-                </div>
-              </div>
+              <p className="text-muted-foreground text-sm">Open 24/7</p>
+              <p className="text-muted-foreground text-sm">
+                Available 24 Hours a Day, 7 Days a Week
+              </p>
             </CardContent>
           </Card>
 
@@ -152,10 +147,16 @@ export function ContactSection() {
               <p className="mb-3 text-muted-foreground text-sm">
                 Speak directly with our team for immediate assistance.
               </p>
-              <Button variant="outline" className="w-full cursor-pointer">
+              <Link
+                href="tel:+821021801070"
+                className={cn(
+                  buttonVariants({ variant: 'outline' }),
+                  'w-full cursor-pointer',
+                )}
+              >
                 <Phone className="me-2 size-4" />
                 Schedule a Call
-              </Button>
+              </Link>
             </CardContent>
           </Card>
         </div>

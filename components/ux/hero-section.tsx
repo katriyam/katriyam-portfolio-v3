@@ -1,5 +1,8 @@
-import { Button } from '@/components/ui/button'
+'use client'
+
+import { buttonVariants } from '@/components/ui/button'
 import { Bucket } from '@/components/ux/bucket'
+import Link from 'next/link'
 
 export function HeroSection() {
   return (
@@ -17,7 +20,9 @@ export function HeroSection() {
             that help your business grow.
           </p>
 
-          <Button size="lg">Book A Meeting</Button>
+          <Link href="/#contact" className={buttonVariants({ size: 'lg' })}>
+            Book A Meeting
+          </Link>
         </div>
 
         <div className="flex-1 w-full h-full">
