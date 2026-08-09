@@ -151,7 +151,7 @@ export function ContactSection() {
                 href="tel:+821021801070"
                 className={cn(
                   buttonVariants({ variant: 'outline' }),
-                  'w-full cursor-pointer',
+                  'w-full cursor-pointer text-primary border-primary hover:bg-primary/10 hover:text-primary',
                 )}
               >
                 <Phone className="me-2 size-4" />

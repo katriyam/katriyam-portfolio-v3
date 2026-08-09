@@ -6,6 +6,7 @@ import { Card } from '@/components/ui/card'
 import { cn } from '@/lib/utils'
 import { motion } from 'framer-motion'
 import { BookOpen, Clock } from 'lucide-react'
+import { buttonVariants } from '@/components/ui/button'
 
 interface GlassBlogCardProps {
   title?: string
@@ -53,7 +54,7 @@ export function BlogCard({
       transition={{ duration: 0.4 }}
       className={cn('w-full', className)}
     >
-      <Card className="group relative h-full overflow-hidden rounded-2xl border-border/50 bg-card/30 backdrop-blur-md transition-all duration-300 py-0 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10">
+      <Card className="group relative h-full overflow-hidden transition-all duration-300 py-0 hover:shadow-xl hover:shadow-primary/10">
         {/* Image Section */}
         <div className="relative aspect-video overflow-hidden">
           <motion.img
@@ -62,14 +63,12 @@ export function BlogCard({
             className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
           />
 
-          <div className="absolute inset-0 bg-linear-to-t from-background/80 to-transparent opacity-60 transition-opacity duration-300 group-hover:opacity-40" />
-
           <div className="absolute bottom-3 left-3 flex gap-2">
             {tags?.map((tag, index) => (
               <Badge
                 key={index}
                 variant="secondary"
-                className="bg-background/50 backdrop-blur-sm hover:bg-background/80"
+                className="bg-background/50 backdrop-blur-sm"
               >
                 {tag}
               </Badge>
@@ -77,11 +76,11 @@ export function BlogCard({
           </div>
 
           {/* Hover Overlay Action */}
-          <div className="absolute inset-0 flex items-center justify-center bg-background/20 backdrop-blur-[2px] opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+          <div className="absolute inset-0 flex items-center justify-center bg-background/20 backdrop-blur-xs opacity-0 transition-opacity duration-300 group-hover:opacity-100">
             <motion.button
-              whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="flex items-center gap-2 rounded-full bg-primary px-6 py-2.5 text-sm font-medium text-primary-foreground shadow-lg shadow-primary/25"
+              whileHover={{ scale: 1.05 }}
+              className={cn(buttonVariants({ size: 'lg' }), 'cursor-pointer')}
             >
               <BookOpen className="h-4 w-4" />
               Read Article
@@ -90,9 +89,9 @@ export function BlogCard({
         </div>
 
         {/* Content Section */}
-        <div className="flex flex-col gap-4 p-5">
+        <div className="space-y-4 p-5">
           <div className="space-y-2">
-            <h3 className="text-xl font-semibold leading-tight tracking-tight text-foreground transition-colors group-hover:text-primary">
+            <h3 className="text-xl font-semibold leading-tight tracking-tight">
               {title}
             </h3>
             <p className="line-clamp-2 text-sm text-muted-foreground">
@@ -102,19 +101,18 @@ export function BlogCard({
 
           <div className="flex items-center justify-between border-t border-border/50 pt-4">
             <div className="flex items-center gap-2">
-              <Avatar className="h-8 w-8 border border-border/50">
+              <Avatar className="size-8">
                 <AvatarImage src={author.avatar} alt={author.name} />
                 <AvatarFallback>{author.name[0]}</AvatarFallback>
               </Avatar>
-              <div className="flex flex-col text-xs">
-                <span className="font-medium text-foreground">
-                  {author.name}
-                </span>
-                <span className="text-muted-foreground">{date}</span>
+
+              <div className="text-xs">
+                <p className="font-medium">{author.name}</p>
+                <p className="text-muted-foreground">{date}</p>
               </div>
             </div>
 
-            <div className="flex items-center gap-1 text-xs text-muted-foreground">
+            <div className="flex items-center gap-1 text-xs text-primary">
               <Clock className="h-3 w-3" />
               <span>{readTime}</span>
             </div>

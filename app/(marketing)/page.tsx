@@ -1,4 +1,4 @@
-import { TeamShowcase } from '@/components/team-showcase'
+import { TeamShowcase } from '@/components/ux/team-showcase'
 import { BlogsSection } from '@/components/ux/blogs-section'
 import { ContactSection } from '@/components/ux/contact-section'
 import { Footer } from '@/components/ux/footer'
@@ -8,14 +8,13 @@ import { Services } from '@/components/ux/services'
 
 export default function Home() {
   return (
-    <main className="bg-gray-100">
+    <main>
       <HeroSection />
       <Services />
       <LatestWorksSection />
       <TeamShowcase />
       <BlogsSection />
       <ContactSection />
-      <Footer />
     </main>
   )
 }

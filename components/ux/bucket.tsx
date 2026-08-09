@@ -868,14 +868,10 @@ export function Bucket() {
                     }}
                     className="bg-card border border-border z-10 rounded-full p-2 w-60 shadow-sm absolute pointer-events-auto flex items-center gap-2 origin-bottom"
                   >
-                    {/* <div className="size-8 rounded-full bg-emerald-500 shrink-0" />
-                    <div className="flex flex-col gap-1.5 w-full">
-                      <div className="h-2 w-3/4 bg-muted rounded-full" />
-                      <div className="h-2 w-1/2 bg-muted rounded-full" />
-                    </div> */}
-                    <div className="flex size-10 shrink-0 items-center justify-center rounded-full bg-muted-foreground/10 text-muted-foreground">
+                    <div className="flex size-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
                       <HugeiconsIcon icon={chip.icon} className="size-5" />
                     </div>
+
                     <div className="flex flex-col gap-0.5">
                       <span className="text-sm font-medium text-foreground leading-none">
                         {chip.title}

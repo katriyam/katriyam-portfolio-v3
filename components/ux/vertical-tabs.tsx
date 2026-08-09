@@ -1,6 +1,6 @@
 'use client'
 
-import { buttonVariants } from '@/components/ui/button'
+import { Button, buttonVariants } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import { ArrowLeft01Icon, ArrowRight01Icon } from '@hugeicons/core-free-icons'
 import { HugeiconsIcon } from '@hugeicons/react'
@@ -118,15 +118,15 @@ export default function VerticalTabs() {
                 className={cn(
                   'group relative flex items-start gap-4 py-6 md:py-8 text-left transition-all duration-500 border-t border-border/50 first:border-0',
                   isActive
-                    ? 'text-foreground'
-                    : 'text-muted-foreground/60 hover:text-foreground',
+                    ? 'text-primary'
+                    : 'text-muted-foreground/60 hover:text-primary',
                 )}
               >
                 <div className="absolute -left-4 md:-left-6 top-0 bottom-0 w-0.5 bg-muted">
                   {isActive && (
                     <motion.div
                       key={`progress-${index}-${isPaused}`}
-                      className="absolute top-0 left-0 w-full bg-foreground origin-top"
+                      className="absolute top-0 left-0 w-full bg-primary origin-top"
                       initial={{ height: '0%' }}
                       animate={isPaused ? { height: '0%' } : { height: '100%' }}
                       transition={{
@@ -146,15 +146,15 @@ export default function VerticalTabs() {
                     <span
                       className={cn(
                         'text-xl md:text-3xl font-normal tracking-tight transition-colors duration-500',
-                        isActive ? 'text-foreground' : '',
+                        isActive ? 'text-primary' : '',
                       )}
                     >
                       {service.title}
                     </span>
 
                     <Link
-                      href={service.link}
                       target="_blank"
+                      href={service.link}
                       className={buttonVariants({
                         size: 'sm',
                         variant: 'ghost',
@@ -194,8 +194,8 @@ export default function VerticalTabs() {
           <div className="relative aspect-16/10 rounded-3xl overflow-hidden bg-muted/30 border border-border/40">
             <AnimatePresence
               initial={false}
-              custom={direction}
               mode="popLayout"
+              custom={direction}
             >
               <motion.div
                 key={activeIndex}
@@ -222,26 +222,24 @@ export default function VerticalTabs() {
             </AnimatePresence>
 
             <div className="absolute bottom-6 right-6 md:bottom-8 md:right-8 flex gap-2 md:gap-3 z-20">
-              <button
-                aria-label="Previous"
+              <Button
+                size="icon-lg"
                 onClick={(e) => {
                   e.stopPropagation()
                   handlePrev()
                 }}
-                className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-background/80 backdrop-blur-md border border-border/50 flex items-center justify-center text-foreground hover:bg-background transition-all active:scale-90"
               >
                 <HugeiconsIcon icon={ArrowLeft01Icon} size={20} />
-              </button>
-              <button
-                aria-label="Next"
+              </Button>
+              <Button
+                size="icon-lg"
                 onClick={(e) => {
                   e.stopPropagation()
                   handleNext()
                 }}
-                className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-background/80 backdrop-blur-md border border-border/50 flex items-center justify-center text-foreground hover:bg-background transition-all active:scale-90"
               >
                 <HugeiconsIcon icon={ArrowRight01Icon} size={20} />
-              </button>
+              </Button>
             </div>
           </div>
         </div>
