@@ -29,9 +29,9 @@ const footerLinks: FooterSection[] = [
     label: 'Quick Link',
     links: [
       { title: 'Home', href: '/' },
-      { title: 'Services', href: '/' },
-      { title: 'Latest Works', href: '/' },
-      { title: 'Articles', href: '/' },
+      { title: 'Services', href: '/#services' },
+      { title: 'Latest Works', href: '/#works' },
+      { title: 'Articles', href: '/#articles' },
     ],
   },
   {
@@ -110,8 +110,7 @@ export function Footer() {
                       <a
                         key={`${section.label}-${link.title}`}
                         href={link.href}
-                        target="_blank"
-                        className="inline-flex items-center duration-250 hover:text-foreground [&_svg]:me-1 [&_svg]:size-4"
+                        className="inline-flex items-center duration-250 hover:text-primary [&_svg]:me-1 [&_svg]:size-4"
                       >
                         {link.icon}
                         {link.title}

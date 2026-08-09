@@ -21,7 +21,7 @@ const DEFAULT_MEMBERS: TeamMember[] = [
   {
     id: '1',
     name: 'Tabassum N. Haque',
-    role: 'director of photography',
+    role: 'CEO & Co-Founder',
     image: '/TEAM-MEMBER-1.webp',
     social: {
       linkedin: 'https://www.linkedin.com/in/tabassum-n-haque',
@@ -31,7 +31,7 @@ const DEFAULT_MEMBERS: TeamMember[] = [
   {
     id: '2',
     name: 'Rafiqur Rahman Priyam',
-    role: 'FOUNDER',
+    role: 'Managing Director & Co-Founder',
     image: '/TEAM-MEMBER-2.jpg',
     social: {
       linkedin: 'https://www.linkedin.com/in/rafiqurrahmanpriyam',
@@ -42,7 +42,7 @@ const DEFAULT_MEMBERS: TeamMember[] = [
   {
     id: '3',
     name: 'Monzoor Morshed Mahmud',
-    role: 'LEAD FRONT-END',
+    role: 'CTO',
     image: '/TEAM-MEMBER-3.jpg',
     social: {
       linkedin: 'https://www.linkedin.com/in/monzoor-morshed/',
@@ -51,7 +51,7 @@ const DEFAULT_MEMBERS: TeamMember[] = [
   {
     id: '4',
     name: 'Md Ahnaf Abir',
-    role: 'PRODUCT OWNER',
+    role: 'Software Engineer',
     image: '/TEAM-MEMBER-4.jpg',
     social: {
       linkedin: 'https://www.linkedin.com/in/ahnafabir11',
@@ -209,7 +209,7 @@ function MemberRow({
         <span
           className={cn(
             'rounded-[5px] w-4 h-3 transition-all duration-300 shrink-0',
-            isActive ? 'bg-foreground w-5' : 'bg-foreground/25',
+            isActive ? 'bg-primary w-5' : 'bg-primary/25',
           )}
         />
         <span
@@ -237,7 +237,7 @@ function MemberRow({
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={(e) => e.stopPropagation()}
-                className="hover:bg-foreground/10 p-1 rounded text-muted-foreground hover:text-foreground hover:scale-110 transition-all duration-150"
+                className="hover:bg-primary/10 p-1 rounded text-muted-foreground hover:text-primary hover:scale-110 transition-all duration-150"
                 title="X / Twitter"
               >
                 <FaTwitter size={10} />
@@ -249,7 +249,7 @@ function MemberRow({
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={(e) => e.stopPropagation()}
-                className="hover:bg-foreground/10 p-1 rounded text-muted-foreground hover:text-foreground hover:scale-110 transition-all duration-150"
+                className="hover:bg-primary/10 p-1 rounded text-muted-foreground hover:text-primary hover:scale-110 transition-all duration-150"
                 title="LinkedIn"
               >
                 <FaLinkedinIn size={10} />
@@ -261,7 +261,7 @@ function MemberRow({
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={(e) => e.stopPropagation()}
-                className="hover:bg-foreground/10 p-1 rounded text-muted-foreground hover:text-foreground hover:scale-110 transition-all duration-150"
+                className="hover:bg-primary/10 p-1 rounded text-muted-foreground hover:text-primary hover:scale-110 transition-all duration-150"
                 title="Instagram"
               >
                 <FaInstagram size={10} />
@@ -273,7 +273,7 @@ function MemberRow({
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={(e) => e.stopPropagation()}
-                className="hover:bg-foreground/10 p-1 rounded text-muted-foreground hover:text-foreground hover:scale-110 transition-all duration-150"
+                className="hover:bg-primary/10 p-1 rounded text-muted-foreground hover:text-primary hover:scale-110 transition-all duration-150"
                 title="Behance"
               >
                 <FaBehance size={10} />
