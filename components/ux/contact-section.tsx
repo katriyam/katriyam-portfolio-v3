@@ -112,9 +112,9 @@ export function ContactSection() {
                 <div>
                   <h4 className="font-medium text-sm">Office</h4>
                   <p className="text-muted-foreground text-xs">
-                    Agrabad Commercial Area,
+                    5th floor, 12 Daewangpangyo-ro 645beon-gil,
                     <br />
-                    Chattogram, Bangladesh.
+                    Bundang-gu, Seongnam-si, Gyeonggi-do.
                   </p>
                 </div>
               </div>

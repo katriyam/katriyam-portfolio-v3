@@ -49,6 +49,15 @@ const DEFAULT_MEMBERS: TeamMember[] = [
     },
   },
   {
+    id: '5',
+    name: 'Vasiliki Panayi',
+    role: 'Head of Growth & Marketing',
+    image: '/TEAM-MEMBER-4.webp',
+    social: {
+      linkedin: 'linkedin.com/in/vasiliki-panayi',
+    },
+  },
+  {
     id: '4',
     name: 'Md Ahnaf Abir',
     role: 'Software Engineer',
