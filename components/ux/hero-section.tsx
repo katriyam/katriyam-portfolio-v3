@@ -21,8 +21,8 @@ export function HeroSection() {
           </p>
 
           <p className="text-xs md:text-lg lg:text-sm text-muted-foreground mb-7">
-            A is a south korea based outsourcing company with the talent pool
-            from Bangladesh.
+            Katriyam is a South Korea based outsourcing company with the talent
+            pool from Bangladesh.
           </p>
 
           <Link href="/#contact" className={buttonVariants({ size: 'lg' })}>
