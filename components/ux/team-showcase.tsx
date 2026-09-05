@@ -2,7 +2,13 @@
 
 import { cn } from '@/lib/utils'
 import { useState } from 'react'
-import { FaLinkedinIn, FaTwitter, FaBehance, FaInstagram } from 'react-icons/fa'
+import {
+  FaLinkedinIn,
+  FaTwitter,
+  FaBehance,
+  FaInstagram,
+  FaFacebook,
+} from 'react-icons/fa'
 
 export interface TeamMember {
   id: string
@@ -14,6 +20,7 @@ export interface TeamMember {
     linkedin?: string
     instagram?: string
     behance?: string
+    facebook?: string
   }
 }
 
@@ -35,7 +42,7 @@ const DEFAULT_MEMBERS: TeamMember[] = [
     image: '/TEAM-MEMBER-2.jpg',
     social: {
       linkedin: 'https://www.linkedin.com/in/rafiqurrahmanpriyam',
-      twitter: 'https://x.com/rrpriyam',
+      facebook: 'https://www.facebook.com/rafiqurrahmanpriyam',
       instagram: 'https://www.instagram.com/rafiqurrahmanpriyam',
     },
   },
@@ -54,7 +61,7 @@ const DEFAULT_MEMBERS: TeamMember[] = [
     role: 'Head of Growth & Marketing',
     image: '/TEAM-MEMBER-4.webp',
     social: {
-      linkedin: 'linkedin.com/in/vasiliki-panayi',
+      linkedin: 'https://www.linkedin.com/in/vasiliki-panayi',
     },
   },
   {
@@ -66,6 +73,7 @@ const DEFAULT_MEMBERS: TeamMember[] = [
       linkedin: 'https://www.linkedin.com/in/ahnafabir11',
       twitter: 'https://x.com/ahnafabir11',
       instagram: 'https://www.instagram.com/ahnafabir11',
+      facebook: 'https://www.facebook.com/ahnafabir11',
     },
   },
 ]
@@ -201,7 +209,8 @@ function MemberRow({
     member.social?.twitter ??
     member.social?.linkedin ??
     member.social?.instagram ??
-    member.social?.behance
+    member.social?.behance ??
+    member.social?.facebook
 
   return (
     <div
@@ -286,6 +295,18 @@ function MemberRow({
                 title="Behance"
               >
                 <FaBehance size={10} />
+              </a>
+            )}
+            {member.social?.facebook && (
+              <a
+                href={member.social.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                className="hover:bg-primary/10 p-1 rounded text-muted-foreground hover:text-primary hover:scale-110 transition-all duration-150"
+                title="Facebook"
+              >
+                <FaFacebook size={10} />
               </a>
             )}
           </div>
