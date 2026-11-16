@@ -22,7 +22,7 @@ const features = [
     name: 'AI Integration',
     description: 'Intelligent automation for businesses',
     cta: 'Learn More',
-    href: '/services/software-development',
+    href: '/services/ai-integration',
     className: 'col-span-3 lg:col-span-1',
     background: (
       <AnimatedBeamAi className="absolute mask-[linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-105 transition-all duration-300 ease-out" />
@@ -33,7 +33,7 @@ const features = [
     name: 'Graphics Design',
     description: 'Designs that elevate brands',
     cta: 'Learn More',
-    href: '/services/software-development',
+    href: '/services/graphics-design',
     className: 'col-span-3 lg:col-span-1',
     background: (
       <IconCloudGraphicsDesign className="absolute -top-10 -right-10 mask-[linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-105 transition-all duration-300 ease-out" />
@@ -44,7 +44,7 @@ const features = [
     name: 'Digital Marketing',
     description: 'Grow your online presence',
     cta: 'Learn More',
-    href: '/services/software-development',
+    href: '/services/digital-marketing',
     className: 'col-span-3 lg:col-span-2',
     background: (
       <OrbitingCirclesDigitalMarketing className="absolute -top-10 -right-30 mask-[linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-105 transition-all duration-300 ease-out" />
