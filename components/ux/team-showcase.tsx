@@ -76,6 +76,15 @@ const DEFAULT_MEMBERS: TeamMember[] = [
       facebook: 'https://www.facebook.com/ahnafabir11',
     },
   },
+  {
+    id: '6',
+    name: 'Zarifa Hasan',
+    role: 'Customer Relationship Manager',
+    image: '/TEAM-MEMBER-5.jpg',
+    social: {
+      linkedin: 'https://www.linkedin.com/in/zarifahasan',
+    },
+  },
 ]
 
 interface TeamShowcaseProps {
