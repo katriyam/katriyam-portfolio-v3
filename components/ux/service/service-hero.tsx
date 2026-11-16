@@ -5,6 +5,18 @@ import { buttonVariants } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import { ArrowUpRight, BriefcaseBusiness } from 'lucide-react'
 import Link from 'next/link'
+import Image from 'next/image'
+
+const serviceImages: Record<string, string> = {
+  'AI Integration':
+    'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&q=85',
+  'Software Development':
+    'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1200&q=85',
+  'Digital Marketing':
+    'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=85',
+  'Graphics Design':
+    'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1200&q=85',
+}
 
 export function ServiceHero({
   title,
@@ -45,7 +57,18 @@ export function ServiceHero({
             </Link>
           </div>
         </div>
-        <div className="mt-auto aspect-video w-full rounded-xl bg-accent" />
+        <div className="relative mt-auto aspect-video w-full overflow-hidden rounded-xl bg-accent">
+          <Image
+            src={
+              serviceImages[title] ??
+              'https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=1200&q=85'
+            }
+            alt={`${title} service`}
+            className="object-cover"
+            fill
+            sizes="(min-width: 1024px) 50vw, 100vw"
+          />
+        </div>
       </div>
     </div>
   )
